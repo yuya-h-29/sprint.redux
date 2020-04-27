@@ -1,0 +1,42 @@
+{
+  "name": "sprint.redux",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:codechrysalis/mini.redux.git",
+  "author": "Yuya Harada <>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix --ext .js .",
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "test": "yarn test:simulate && yarn test:mocha && yarn lint",
+    "test:mocha": "cross-env NODE_ENV=test mocha src/__tests__/**/*.js",
+    "test:simulate": "concurrently --kill-others -s first \"cross-env PORT=1337 yarn start\" \"node simulation/simulate.js\""
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-exclude": "^1.0.10",
+    "chai-http": "^4.2.0",
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-problems": "^1.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.1.2",
+    "mocha": "^7.1.2",
+    "node-fetch": "^2.2.0",
+    "nodemon": "^2.0.3",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "queue": "^4.5.0",
+    "redux": "^4.0.5",
+    "shortid": "^2.2.15",
+    "underscore": "^1.9.1"
+  }
+}
