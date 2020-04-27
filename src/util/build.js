@@ -27,4 +27,5 @@ const triggerBuild = async (projectId) => {
 
 module.exports = {
   triggerBuild,
+  buildProject,
 };

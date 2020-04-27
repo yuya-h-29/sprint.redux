@@ -1,14 +1,14 @@
 import { createStore } from "redux";
-import { reduce } from "bluebird";
+// import { reduce } from "bluebird";
+const router = require("router");
 
-const initialState = {
-  slices: ["A", "A", "A"],
-  topping: ["B", "B", "B"],
-};
+// const initialState = {
+//   status: "running",
+// };
 
-function reducer(state = initialState, action) {
+function reducer(state = [], action) {
   switch (action.type) {
-    case "EAT_SLICE":
+    case "Failed":
       return {
         ...state,
         slices: state.slices.slice(1),
@@ -30,3 +30,8 @@ store.subscribe(() => {
 //reducer
 
 //dispatch
+store.dispatch(status());
+
+const status = () {
+    
+}
