@@ -1,37 +1,41 @@
 import { createStore } from "redux";
-// import { reduce } from "bluebird";
-const router = require("router");
+//import { reduce } from "bluebird";
+const apiRoutes = require("../src/api");
 
-// const initialState = {
-//   status: "running",
-// };
+// const initialState = { projects: [] };
 
-function reducer(state = [], action) {
+const initialState = {
+  projects: [
+    {
+      name: "redux",
+      url: "github.com/reactjs/redux",
+      buildCommand: "yarn test",
+      language: "js",
+    },
+  ],
+};
+
+// const GET_ALL_PROJECTS = apiRoutes;
+
+function reducer(state = initialState, action) {
   switch (action.type) {
-    case "Failed":
-      return {
-        ...state,
-        slices: state.slices.slice(1),
-      };
-
+    case "GET_ALL_PROJECTS":
+      return { ...state };
     default:
       return state;
   }
 }
 
-//store
 const store = createStore(reducer);
 
 store.subscribe(() => {
   render();
 });
-//action increment
 
-//reducer
-
-//dispatch
-store.dispatch(status());
-
-const status = () {
-    
+function render() {
+  //getstatus
 }
+
+render();
+
+store.dispatch({ type: "GET_ALL_PROJECTS" });
