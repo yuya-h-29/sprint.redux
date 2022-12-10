@@ -33,7 +33,7 @@
   "dependencies": {
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "queue": "^4.5.0",
     "redux": "^4.0.5",
     "shortid": "^2.2.15",
